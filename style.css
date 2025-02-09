@@ -1,0 +1,262 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0a0a0a;
+    color: #00ffcc;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Add a subtle animated gradient background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #0a0a0a, #003333, #0a0a0a);
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Style the main container */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 50px auto;
+    background: rgba(26, 26, 26, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 204, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 204, 0.2);
+}
+
+/* Style the heading */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #00ffcc;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.7);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #00ffcc;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.7);
+}
+
+/* Style the form */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.form input, .form select, .form button {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    outline: none;
+    font-size: 16px;
+    background: rgba(34, 34, 34, 0.8);
+    color: #00ffcc;
+    transition: all 0.3s ease;
+}
+
+.form input:focus, .form select:focus {
+    border-color: #00ffcc;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+}
+
+.form button {
+    background: linear-gradient(45deg, #00ffcc, #007766);
+    color: #0a0a0a;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+}
+
+.form button:hover {
+    background: linear-gradient(45deg, #007766, #00ffcc);
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.8);
+    transform: scale(1.05);
+}
+
+/* Style the expense list */
+#expense-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+#expense-list li {
+    background: rgba(34, 34, 34, 0.9);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#expense-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.6);
+}
+
+#expense-list li button {
+    background: #ff4444;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#expense-list li button:hover {
+    background: #cc0000;
+    transform: scale(1.1);
+}
+
+/* Style the chart */
+#expense-chart {
+    background: rgba(34, 34, 34, 0.9);
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+/* Style the currency converter */
+.currency-converter {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(34, 34, 34, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+}
+
+.currency-converter input, .currency-converter select, .currency-converter button {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    outline: none;
+    font-size: 16px;
+    background: rgba(26, 26, 26, 0.8);
+    color: #00ffcc;
+    transition: all 0.3s ease;
+}
+
+.currency-converter input:focus, .currency-converter select:focus {
+    border-color: #00ffcc;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+}
+
+.currency-converter button {
+    background: linear-gradient(45deg, #00ffcc, #007766);
+    color: #0a0a0a;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+}
+
+.currency-converter button:hover {
+    background: linear-gradient(45deg, #007766, #00ffcc);
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.8);
+    transform: scale(1.05);
+}
+
+#conversion-result {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #00ffcc;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.7);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .form, .currency-converter {
+        flex-direction: column;
+    }
+
+    .form input, .form select, .form button,
+    .currency-converter input, .currency-converter select, .currency-converter button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* Expense List Styling */
+#expense-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+/* Expense Item */
+#expense-list li {
+    background: rgba(34, 34, 34, 0.9);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Delete Button */
+.delete-btn {
+    background: rgba(255, 0, 0, 0.7);
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect for Delete Button */
+.delete-btn:hover {
+    background: rgba(255, 0, 0, 1);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+}
+button{
+    background: linear-gradient(45deg, #007766, #00ffcc);
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.8);
+    transform: scale(1.05);
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #00ffcc;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.7);
+    background: rgba(34, 34, 34, 0.8);
+    border-radius: 30px;
+}
+
+
